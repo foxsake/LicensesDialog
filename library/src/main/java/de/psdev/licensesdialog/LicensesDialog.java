@@ -95,6 +95,8 @@ public class LicensesDialog {
         dialog.setOnDismissListener(new DialogInterface.OnDismissListener() {
             @Override
             public void onDismiss(final DialogInterface dialog) {
+                (webView.getParent()).removeView(webView);
+                webView.destroy();
                 if (mOnDismissListener != null) {
                     mOnDismissListener.onDismiss(dialog);
                 }
